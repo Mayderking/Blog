@@ -8,11 +8,21 @@
         Buscar: <input type="text" name="q">
         <button type="submit">Buscar</button>
     </form>
+
+    <form method="GET">
+        inicio_fecha: <input type="text" name="inicio_fecha">
+        final_fecha: <input type="text" name='final_fecha'>
+        <button type="submit">filtrar</button>
+    </form>
+
     <ul>
         {% for post in posts %}
-            <li>{{ post.titulo }} - {{ post.contenido }} - {{ post.fecha_publicacion }} - {{ post.categoria }} - {{ post.autor }}</li>
+            <li>
+                <a href="{% url 'detalles_publicacion' post.id %}">{{ post.titulo }}</a>
+            </li>
         {% endfor %}
     </ul>
+
     <div>
         {% if posts.has_previous %}
             <a href="?page={{ posts.previous_page_number }}">Anterior</a>
@@ -24,6 +34,7 @@
             <a href="?page={{ posts.next_page_number }}">Siguiente</a>
         {% endif %}
     </div>
+
     <a href="{% url 'agregar_publicacion' %}">agregar_publicacion</a>
     <a href="{% url 'inicio' %}">Volver al inicio</a>
 </body>
