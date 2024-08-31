@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<head>
+    <title>Vista de publicaciones</title>
+</head>
+<body>
+    <h1>Vista de publicaciones</h1>
+    <ul>
+        {% for post in posts %}
+            <li>{{ post.titulo }} - {{ post.contenido }} - {{ post.fecha_publicacion }} - {{ post.categoria }} - {{ post.autor }}</li>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>
