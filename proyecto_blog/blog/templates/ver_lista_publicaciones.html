@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <head>
     <title>Vista de publicaciones</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <h1>Vista de publicaciones</h1>
@@ -10,8 +12,8 @@
     </form>
 
     <form method="GET">
-        inicio_fecha: <input type="text" name="inicio_fecha">
-        final_fecha: <input type="text" name='final_fecha'>
+        inicio fecha: <input type="text" name="inicio_fecha">
+        final fecha: <input type="text" name='final_fecha'>
         <button type="submit">filtrar</button>
     </form>
 
