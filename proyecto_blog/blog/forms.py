@@ -12,4 +12,10 @@ class PostModelForm(forms.ModelForm):
         if fecha > timezone.now().date():
             raise forms.ValidationError("Hermano usted es vidente o que?")
         return fecha
+    
+    def clean_titulo(self):
+        titulo = self.cleaned_data.get('titulo')
+        if not titulo:
+            raise forms.ValidationError("y el titulo que?")
+        return titulo
         
